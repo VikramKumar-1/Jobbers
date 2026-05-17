@@ -42,7 +42,7 @@ export default function Register() {
       <div className="absolute top-0 left-0 w-64 h-64 bg-blue-100 dark:bg-blue-900/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 opacity-60"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-100 dark:bg-indigo-900/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 opacity-60"></div>
 
-      <div className="max-w-md w-full space-y-6 bg-white/80 dark:bg-[#161b22]/90 backdrop-blur-xl p-8 rounded-[32px] shadow-2xl border border-white dark:border-gray-800 relative z-10">
+      <div className={`w-full space-y-6 bg-white/80 dark:bg-[#161b22]/90 backdrop-blur-xl p-5 sm:p-8 rounded-[32px] shadow-2xl border border-white dark:border-gray-800 relative z-10 transition-all duration-350 ${role === 'recruiter' ? 'max-w-xl' : 'max-w-md'}`}>
         <div className="text-center">
           <div className="mx-auto h-14 w-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200 dark:shadow-blue-900/30 mb-4">
             <Briefcase className="h-7 w-7 text-white" />
@@ -50,25 +50,16 @@ export default function Register() {
           <h2 className="text-3xl font-black text-gray-900 dark:text-white tracking-tight">
             Join the <span className="text-blue-600">Future.</span>
           </h2>
-          <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-medium">
+          <p className="mt-1.5 text-gray-500 dark:text-gray-400 text-sm font-medium">
             Find your dream career or hire top talent today.
           </p>
           {role === 'recruiter' && (
-            <div className="mt-4 p-3.5 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/50 rounded-2xl text-left animate-slide-in">
-              <h4 className="text-[10px] font-black text-blue-700 dark:text-blue-400 uppercase tracking-widest mb-1.5 flex items-center gap-1">
-                <span>🎁</span> Free Recruiter Tier Benefits
-              </h4>
-              <ul className="space-y-1 text-[10px] text-gray-600 dark:text-gray-400 font-bold">
-                <li className="flex items-center gap-1.5">
-                  <span className="text-blue-600 dark:text-blue-400 font-black">✓</span> Post unlimited jobs 100% free (No credit cards)
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <span className="text-blue-600 dark:text-blue-400 font-black">✓</span> Access intelligent candidate skill matching
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <span className="text-blue-600 dark:text-blue-400 font-black">✓</span> Simple dashboard application tracking
-                </li>
-              </ul>
+            <div className="mt-3.5 p-2 bg-gradient-to-r from-blue-50/50 to-indigo-50/50 dark:from-blue-950/10 dark:to-indigo-950/10 border border-blue-100/50 dark:border-blue-900/30 rounded-xl text-center animate-slide-in">
+              <div className="flex flex-wrap justify-center gap-1.5 text-[9px] font-black text-blue-600 dark:text-blue-400">
+                <span className="px-2 py-0.5 bg-white dark:bg-[#161b22] border border-blue-100/30 dark:border-blue-900/30 rounded-full shadow-sm">✓ 100% Free Postings</span>
+                <span className="px-2 py-0.5 bg-white dark:bg-[#161b22] border border-blue-100/30 dark:border-blue-900/30 rounded-full shadow-sm">✓ Smart Matching</span>
+                <span className="px-2 py-0.5 bg-white dark:bg-[#161b22] border border-blue-100/30 dark:border-blue-900/30 rounded-full shadow-sm">✓ Candidate Tracking</span>
+              </div>
             </div>
           )}
         </div>
@@ -85,7 +76,7 @@ export default function Register() {
         </div>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
-          <div className="space-y-3">
+          <div className={`grid gap-3 ${role === 'recruiter' ? 'sm:grid-cols-2 sm:gap-x-4 sm:gap-y-3' : 'grid-cols-1'}`}>
             <div>
               <label className="block text-xs font-black text-gray-400 uppercase tracking-widest mb-1 ml-1">Full Name</label>
               <div className="relative group">
