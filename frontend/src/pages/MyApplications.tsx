@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuthStore } from '../store/authStore';
-import { Briefcase, Clock, UserCheck, UserX, CheckCircle, Search } from 'lucide-react';
+import { Clock, UserCheck, UserX, CheckCircle } from 'lucide-react';
 import api from '../api';
 import { Link } from 'react-router-dom';
 import Skeleton from '../components/Skeleton';

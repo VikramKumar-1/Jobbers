@@ -1,6 +1,6 @@
 import { useState, useEffect, MouseEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MapPin, Briefcase, IndianRupee, Clock, CheckCircle2 } from 'lucide-react';
+import { MapPin, Briefcase, IndianRupee, Clock } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 import { useAuthStore } from '../store/authStore';
 import { useToast } from '../context/ToastContext';

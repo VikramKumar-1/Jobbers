@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Loader2, Search, SlidersHorizontal } from 'lucide-react';
+import { ArrowLeft, Loader2 } from 'lucide-react';
 import api from '../api';
 import JobCard, { Job } from '../components/JobCard';
 import { useAuthStore } from '../store/authStore';
