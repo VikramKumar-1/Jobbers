@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-[#0f1117] dark:text-gray-100 transition-colors duration-300;
+  }
+}
+
+/* Hide scrollbar for horizontal scrolling but allow scroll */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth slide-in animation */
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Glow effect for dark mode cards */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+  50% { box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.1); }
+}
+.dark .card-glow:hover {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
