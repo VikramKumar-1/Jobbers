@@ -4,9 +4,8 @@ import { formatTimeAgo } from '../utils/format';
 import JobSlider from '../components/JobSlider';
 import Skeleton from '../components/Skeleton';
 import { Job } from '../components/JobCard';
-import { Search, MapPin, Building2, Globe, ArrowRight, Loader2, X, Cpu, Users, Wifi, Code2, Palette, Database, Smartphone, BarChart3, Wrench, Truck, HeartPulse, GraduationCap, Landmark, Sparkles } from 'lucide-react';
+import { Search, MapPin, Building2, Globe, ArrowRight, X, Cpu, Users, Wifi, Code2, Palette, Database, Smartphone, BarChart3, Wrench, Truck, HeartPulse, GraduationCap, Landmark, Sparkles } from 'lucide-react';
 import api from '../api';
-import { useToast } from '../context/ToastContext';
 import { useNavigate } from 'react-router-dom';
 import { calcMatch, calculateAdvancedMatch, isWithinDays } from '../utils/jobMatch';
 import { getRelatedKeywords } from '../utils/searchNormalization';
@@ -32,7 +31,6 @@ const popularCategories = [
 
 export default function Home() {
   const { user } = useAuthStore();
-  const { showToast } = useToast();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [allJobs, setAllJobs] = useState<any[]>([]);
@@ -42,7 +40,7 @@ export default function Home() {
   const [searchResults, setSearchResults] = useState<Job[] | null>(null);
   const [activeCategory, setActiveCategory] = useState('All');
   const [companySearchResults, setCompanySearchResults] = useState<any[]>([]);
-  const [searchingCompany, setSearchingCompany] = useState(false);
+
   const companyRef = useRef<HTMLDivElement>(null);
   const [hiringCompanies, setHiringCompanies] = useState<any[]>([]);
   const [topCompanies, setTopCompanies] = useState<any[]>([]);

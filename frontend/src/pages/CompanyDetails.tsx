@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Building2, Globe, Star, MapPin, Briefcase, ArrowRight, Loader2 } from 'lucide-react';
+import { Building2, Globe, Star, MapPin, Briefcase, Loader2 } from 'lucide-react';
 import api from '../api';
 import JobCard from '../components/JobCard';
 
@@ -28,8 +28,7 @@ export default function CompanyDetails() {
     }
   };
 
-  const itJobs = jobs.filter(j => j.category === 'IT' || j.category === 'Both');
-  const nonItJobs = jobs.filter(j => j.category === 'Non-IT');
+
 
   if (loading) return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-[#0f1117]">
