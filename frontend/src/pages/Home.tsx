@@ -40,6 +40,7 @@ export default function Home() {
   const [searchResults, setSearchResults] = useState<Job[] | null>(null);
   const [activeCategory, setActiveCategory] = useState('All');
   const [companySearchResults, setCompanySearchResults] = useState<any[]>([]);
+  const [searchingCompany, setSearchingCompany] = useState(false);
 
   const companyRef = useRef<HTMLDivElement>(null);
   const [hiringCompanies, setHiringCompanies] = useState<any[]>([]);
@@ -261,6 +262,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white dark:bg-[#1c2333] p-1 rounded-2xl sm:rounded-full flex items-center shadow-[0_4px_20px_rgb(0,0,0,0.08)] dark:shadow-[0_4px_20px_rgb(0,0,0,0.3)] max-w-4xl mx-auto flex-col sm:flex-row gap-0 border border-gray-100 dark:border-gray-700">
             <div className="flex-[1.2] flex items-center px-5 py-3 w-full relative" ref={companyRef}>
+              <div className="hidden" aria-hidden="true">{searchingCompany ? 'searching' : ''}</div>
               <Search className="text-blue-600 w-4.5 h-4.5 mr-3 shrink-0" />
               <input
                 type="text" value={searchQuery}
