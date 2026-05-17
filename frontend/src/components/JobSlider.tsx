@@ -49,7 +49,7 @@ export default function JobSlider({ title, icon, jobs, loading, type }: JobSlide
         >
           {loading ? (
             Array.from({ length: 5 }).map((_, i) => (
-              <div key={i} className="flex-none w-[280px] sm:w-[320px] max-w-[280px] sm:max-w-[320px] h-[185px] bg-white dark:bg-[#161b22] border border-gray-100 dark:border-gray-800 rounded-xl p-4 snap-start">
+              <div key={i} className="flex-none w-[280px] min-w-[280px] max-w-[280px] sm:w-[320px] sm:min-w-[320px] sm:max-w-[320px] h-[185px] bg-white dark:bg-[#161b22] border border-gray-100 dark:border-gray-800 rounded-xl p-4 snap-start">
                 <Skeleton className="w-3/4 h-5 mb-3" />
                 <Skeleton className="w-1/2 h-4 mb-6" />
                 <div className="flex gap-2 mb-4">
@@ -73,7 +73,7 @@ export default function JobSlider({ title, icon, jobs, loading, type }: JobSlide
             </div>
           ) : (
             jobs.map(job => (
-              <div key={job.id} className="snap-start flex-none w-[280px] sm:w-[320px] max-w-[280px] sm:max-w-[320px] h-[185px]">
+              <div key={job.id} className="snap-start flex-none w-[280px] min-w-[280px] max-w-[280px] sm:w-[320px] sm:min-w-[320px] sm:max-w-[320px] h-[185px]">
                 <JobCard job={job} />
               </div>
             ))

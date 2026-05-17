@@ -68,7 +68,7 @@ export default function JobCard({ job }: JobCardProps) {
   return (
     <div
       onClick={() => navigate(`/jobs/${job.id}`)}
-      className="w-full h-full bg-white dark:bg-[#161b22] border border-gray-200/90 dark:border-gray-800 hover:dark:border-gray-700 rounded-xl p-3.5 sm:p-4 shadow-sm shadow-gray-100/70 hover:shadow-md hover:border-gray-300 dark:shadow-none dark:hover:shadow-none transition-all duration-300 cursor-pointer group flex flex-col justify-between"
+      className="w-full h-full bg-white dark:bg-[#161b22] border border-gray-200/90 dark:border-gray-800 hover:dark:border-gray-700 rounded-xl p-3.5 sm:p-4 shadow-sm shadow-gray-100/70 hover:shadow-md hover:border-gray-300 dark:shadow-none dark:hover:shadow-none transition-all duration-300 cursor-pointer group flex flex-col justify-between overflow-hidden"
     >
       <div>
         <div className="flex justify-between items-start mb-1.5 sm:mb-2">
@@ -107,11 +107,11 @@ export default function JobCard({ job }: JobCardProps) {
         </div>
 
         <div className="space-y-1 sm:space-y-1.5 mb-2.5 sm:mb-3">
-          <div className="flex items-center text-[11px] text-gray-500 dark:text-gray-400 gap-2.5">
+          <div className="flex flex-wrap items-center text-[11px] text-gray-500 dark:text-gray-400 gap-y-0.5 gap-x-2.5">
             <span className="flex items-center gap-1"><Briefcase className="w-3 h-3"/> {job.experience}</span>
             {job.salary && <span className="flex items-center gap-1"><IndianRupee className="w-3 h-3"/> {job.salary}</span>}
           </div>
-          <div className="flex items-center text-[11px] text-gray-500 dark:text-gray-400 gap-2.5">
+          <div className="flex flex-wrap items-center text-[11px] text-gray-500 dark:text-gray-400 gap-y-0.5 gap-x-2.5">
             <span className="flex items-center gap-1"><MapPin className="w-3 h-3"/> {job.location}</span>
             <span className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-gray-600 dark:text-gray-400 text-[10px]">{job.workMode}</span>
           </div>

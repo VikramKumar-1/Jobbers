@@ -53,6 +53,24 @@ export default function Register() {
           <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-medium">
             Find your dream career or hire top talent today.
           </p>
+          {role === 'recruiter' && (
+            <div className="mt-4 p-3.5 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 border border-blue-100 dark:border-blue-900/50 rounded-2xl text-left animate-slide-in">
+              <h4 className="text-[10px] font-black text-blue-700 dark:text-blue-400 uppercase tracking-widest mb-1.5 flex items-center gap-1">
+                <span>🎁</span> Free Recruiter Tier Benefits
+              </h4>
+              <ul className="space-y-1 text-[10px] text-gray-600 dark:text-gray-400 font-bold">
+                <li className="flex items-center gap-1.5">
+                  <span className="text-blue-600 dark:text-blue-400 font-black">✓</span> Post unlimited jobs 100% free (No credit cards)
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <span className="text-blue-600 dark:text-blue-400 font-black">✓</span> Access intelligent candidate skill matching
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <span className="text-blue-600 dark:text-blue-400 font-black">✓</span> Simple dashboard application tracking
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
 
         <div className="flex bg-gray-100/50 dark:bg-gray-800 p-1 rounded-xl">

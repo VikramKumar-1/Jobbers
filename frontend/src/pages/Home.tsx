@@ -343,9 +343,33 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="flex-1 py-4 space-y-4">
-        {loading && allJobs.length === 0 ? (
-          <DynamicTypingLoader />
-        ) : searchResults ? (
+        {/* Render dynamic typing banner at the top if loading from free-tier backend */}
+        {loading && allJobs.length === 0 && (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 border border-blue-100/70 dark:border-blue-900/40 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm animate-pulse">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-white shrink-0 shadow-md">
+                  <Sparkles className="w-5 h-5 animate-spin" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 dark:text-white text-sm flex items-center gap-1.5">
+                    Connecting to Free-Tier Backend...
+                  </h4>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400 font-bold">
+                    Render databases spin down after 15m of inactivity. Waking up the server (takes ~40s)...
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700/80 px-3.5 py-1.5 rounded-xl flex items-center shrink-0">
+                <span className="text-[10px] text-blue-600 dark:text-blue-400 font-black tracking-tight animate-caret border-r-2 border-blue-500 pr-1">
+                  Fetching job postings, please hold on...
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {searchResults ? (
           <div className="min-h-[400px]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
               <button onClick={() => { setSearchQuery(''); setLocationQuery(''); setSearchResults(null); }}
