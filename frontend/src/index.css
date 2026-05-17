@@ -34,3 +34,12 @@
 .dark .card-glow:hover {
   animation: glow-pulse 2s ease-in-out infinite;
 }
+
+/* Caret blinking for typing loading animation */
+@keyframes caret-blink {
+  50% { border-color: transparent; }
+}
+.animate-caret {
+  animation: caret-blink 0.8s step-end infinite;
+}
+

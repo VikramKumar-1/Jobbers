@@ -3,6 +3,7 @@ import { useAuthStore } from '../store/authStore';
 import { formatTimeAgo } from '../utils/format';
 import JobSlider from '../components/JobSlider';
 import Skeleton from '../components/Skeleton';
+import DynamicTypingLoader from '../components/DynamicTypingLoader';
 import { Job } from '../components/JobCard';
 import { Search, MapPin, Building2, Globe, ArrowRight, X, Cpu, Users, Wifi, Code2, Palette, Database, Smartphone, BarChart3, Wrench, Truck, HeartPulse, GraduationCap, Landmark, Sparkles } from 'lucide-react';
 import api from '../api';
@@ -342,7 +343,9 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="flex-1 py-4 space-y-4">
-        {searchResults ? (
+        {loading && allJobs.length === 0 ? (
+          <DynamicTypingLoader />
+        ) : searchResults ? (
           <div className="min-h-[400px]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
               <button onClick={() => { setSearchQuery(''); setLocationQuery(''); setSearchResults(null); }}

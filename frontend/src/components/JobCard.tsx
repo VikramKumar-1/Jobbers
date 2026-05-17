@@ -68,7 +68,7 @@ export default function JobCard({ job }: JobCardProps) {
   return (
     <div
       onClick={() => navigate(`/jobs/${job.id}`)}
-      className="flex-none w-[260px] sm:w-[320px] bg-white dark:bg-[#161b22] border border-gray-200/90 dark:border-gray-800 hover:dark:border-gray-700 rounded-xl p-3.5 sm:p-4 shadow-sm shadow-gray-100/70 hover:shadow-md hover:border-gray-300 dark:shadow-none dark:hover:shadow-none transition-all duration-300 cursor-pointer group flex flex-col justify-between"
+      className="w-full h-full bg-white dark:bg-[#161b22] border border-gray-200/90 dark:border-gray-800 hover:dark:border-gray-700 rounded-xl p-3.5 sm:p-4 shadow-sm shadow-gray-100/70 hover:shadow-md hover:border-gray-300 dark:shadow-none dark:hover:shadow-none transition-all duration-300 cursor-pointer group flex flex-col justify-between"
     >
       <div>
         <div className="flex justify-between items-start mb-1.5 sm:mb-2">

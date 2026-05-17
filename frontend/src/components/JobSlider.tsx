@@ -73,7 +73,7 @@ export default function JobSlider({ title, icon, jobs, loading, type }: JobSlide
             </div>
           ) : (
             jobs.map(job => (
-              <div key={job.id} className="snap-start">
+              <div key={job.id} className="snap-start flex-none w-[280px] sm:w-[320px] h-full">
                 <JobCard job={job} />
               </div>
             ))
