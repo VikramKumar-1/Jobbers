@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAuthStore } from '../store/authStore';
-import { Briefcase, Link as LinkIcon, Globe, Image as ImageIcon, Save, CheckCircle, Star, ArrowLeft, Upload } from 'lucide-react';
+import { Link as LinkIcon, Globe, Image as ImageIcon, Save, CheckCircle, Star, ArrowLeft, Upload } from 'lucide-react';
 import api from '../api';
 import { useToast } from '../context/ToastContext';
 import { useNavigate } from 'react-router-dom';

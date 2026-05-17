@@ -4,7 +4,7 @@ import { formatTimeAgo } from '../utils/format';
 import JobSlider from '../components/JobSlider';
 import Skeleton from '../components/Skeleton';
 import { Job } from '../components/JobCard';
-import { Search, MapPin, Globe, Loader2, X, Wifi, Code2, Palette, Database, Smartphone, BarChart3, Wrench, Truck, HeartPulse, GraduationCap, Landmark, Sparkles } from 'lucide-react';
+import { Search, MapPin, Building2, Globe, ArrowRight, Loader2, X, Cpu, Users, Wifi, Code2, Palette, Database, Smartphone, BarChart3, Wrench, Truck, HeartPulse, GraduationCap, Landmark, Sparkles } from 'lucide-react';
 import api from '../api';
 import { useToast } from '../context/ToastContext';
 import { useNavigate } from 'react-router-dom';

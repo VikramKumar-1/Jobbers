@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Users, Briefcase, BarChart3, Plus, FileText, CheckCircle, TrendingUp, X, Search, Eye, Clock, UserCheck, UserX, Loader2 } from 'lucide-react';
+import { Users, Briefcase, Plus, FileText, CheckCircle, TrendingUp, X, Search, Eye, Clock, UserCheck, UserX, Loader2 } from 'lucide-react';
 import api from '../api';
 import { useToast } from '../context/ToastContext';
 import { ALL_SKILLS } from '../data/skills';
@@ -31,7 +31,7 @@ export default function RecruiterDashboard() {
   const [appLoading, setAppLoading] = useState(false);
   const [statusFilter, setStatusFilter] = useState('');
   const [viewApplicant, setViewApplicant] = useState<Applicant | null>(null);
-  const [selectedUser, setSelectedUser] = useState<any | null>(null);
+
   
   const [searchQuery, setSearchQuery] = useState('');
   const [minExp, setMinExp] = useState('');
