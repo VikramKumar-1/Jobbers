@@ -64,16 +64,18 @@ export default function Register() {
           )}
         </div>
 
-        <div className="flex bg-gray-100/50 dark:bg-gray-800 p-1 rounded-xl">
-          <button
-            className={`flex-1 py-2.5 text-sm font-black rounded-lg transition-all duration-300 ${role === 'candidate' ? 'bg-white dark:bg-[#161b22] shadow-sm text-blue-600' : 'text-gray-500 dark:text-gray-400'}`}
-            onClick={() => setRole('candidate')}
-          >Candidate</button>
-          <button
-            className={`flex-1 py-2.5 text-sm font-black rounded-lg transition-all duration-300 ${role === 'recruiter' ? 'bg-white dark:bg-[#161b22] shadow-sm text-blue-600' : 'text-gray-500 dark:text-gray-400'}`}
-            onClick={() => setRole('recruiter')}
-          >Recruiter</button>
-        </div>
+        {!searchParams.get('role') && (
+          <div className="flex bg-gray-100/50 dark:bg-gray-800 p-1 rounded-xl">
+            <button
+              className={`flex-1 py-2.5 text-sm font-black rounded-lg transition-all duration-300 ${role === 'candidate' ? 'bg-white dark:bg-[#161b22] shadow-sm text-blue-600' : 'text-gray-500 dark:text-gray-400'}`}
+              onClick={() => setRole('candidate')}
+            >Candidate</button>
+            <button
+              className={`flex-1 py-2.5 text-sm font-black rounded-lg transition-all duration-300 ${role === 'recruiter' ? 'bg-white dark:bg-[#161b22] shadow-sm text-blue-600' : 'text-gray-500 dark:text-gray-400'}`}
+              onClick={() => setRole('recruiter')}
+            >Recruiter</button>
+          </div>
+        )}
 
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className={`grid gap-3 ${role === 'recruiter' ? 'sm:grid-cols-2 sm:gap-x-4 sm:gap-y-3' : 'grid-cols-1'}`}>
