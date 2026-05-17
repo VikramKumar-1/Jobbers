@@ -3,7 +3,6 @@ import { useAuthStore } from '../store/authStore';
 import { formatTimeAgo } from '../utils/format';
 import JobSlider from '../components/JobSlider';
 import Skeleton from '../components/Skeleton';
-import DynamicTypingLoader from '../components/DynamicTypingLoader';
 import { Job } from '../components/JobCard';
 import { Search, MapPin, Building2, Globe, ArrowRight, X, Cpu, Users, Wifi, Code2, Palette, Database, Smartphone, BarChart3, Wrench, Truck, HeartPulse, GraduationCap, Landmark, Sparkles } from 'lucide-react';
 import api from '../api';
